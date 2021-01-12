@@ -29,8 +29,14 @@ def lesson_to_string(lesson):
             result += "ctrl+"
             if(cache == "LEFT BRACKET"):
                 result += "["
-            elif(cache == "R"):
-                result += "r"
+            else:
+                result += item[-1].lower()
+        elif (item == "DOLLAR"):
+            result += "$"
+        elif (item == "CARET"):
+            result += "^"
+        elif (item[0] == "N" and item[1].isnumeric()):
+            result += item[1]
         else:
             result += item.lower()
     return result
