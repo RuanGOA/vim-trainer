@@ -56,3 +56,24 @@ def clear():
     else:
         sys('clear')
 
+
+def verify_event_key_down(answers):
+    res = False
+    for ans in answers:
+        if ('CTRL_' in ans[0] or ans[0] == 'ESC'):
+            res = True
+    return res
+
+
+def verify_key_down(key, right_answers):
+    result = False
+    for answer in right_answers:
+        if key == answer[0]:
+            result = True
+    return result
+
+
+def create_title(text, color="\u001b[46m", size=45):
+    sides_spaces = int((size - len(text))/2)*' '
+    return color + sides_spaces + text + sides_spaces + "\u001b[0m"
+
