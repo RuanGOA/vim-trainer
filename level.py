@@ -10,4 +10,3 @@ class level:
         lesson = randint(0, len(self.lessons)-1)
         return list(self.lessons.items())[lesson]
 
-
