@@ -28,5 +28,29 @@ LESSONS = [
         "Append at cursor": [["A"]],
         "Append at end of line": [["SHIFT_A"]],
         "Exit insert mode": [["ESC"]]
+    },
+    {
+        "Delete word": [["D", "W"]],
+        "Delete to end of line": [["D", "DOLLAR"], ["SHIFT_D"]],
+        "Next word": [["W"]],
+        "Go to end of text on current line": [["DOLLAR"]],
+        "Go to beginning of text on current line": [["CARET"]],
+        "Go to beginning of current line": [["N0"]],
+        "Go two word forward": [["N2", "W"]],
+        "Go to end of third word ahead": [["N3", "E"]],
+        "Delete two words": [["D", "N2", "W"]],
+        "Delete entire line": [["D", "D"]],
+        "Delete two lines": [["N2", "D", "D"]],
+        "Undo last change": [["U"]],
+        "Undo changes on entire line": [["SHIFT_U"]],
+        "Redo changes": [["CTRL_R"]]
+    },
+    {
+        "Paste after cursor": [["P"]],
+        "Paste before cursor": [["SHIFT_P"]],
+        "Replace character under cursor": [["R"]],
+        "Change word": [["C", "W"]],
+        "Change to end of line": [["C", "$"], ["SHIFT_C"]],
+        "Change two words": [["C", "N2", "W"]]
     }
 ]
