@@ -8,7 +8,7 @@ def up_next(level):
         for i in range(len(lesson_list)):
             if(i > 0):
                 print(" or ", end="")
-            print("\u001b[46m" + lesson_to_string(lesson_list[i]) + "\u001b[0m", end="")
+            print("\u001b[46m " + lesson_to_string(lesson_list[i]) + " \u001b[0m", end="")
         print()
     print()
 
