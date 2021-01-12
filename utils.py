@@ -1,6 +1,7 @@
 from os import system as sys, name as nm
 
 
+
 def up_next(level):
     print(level.name)
     for text, lesson_list in level.lessons.items():
@@ -16,6 +17,12 @@ def up_next(level):
 def lesson_to_string(lesson):
     result = ""
     for item in lesson:
+        if ("CTRL_" in item):
+            result += "ctrl+"
+            result += item[-1].lower()
+        else:
+            result += item
+        """
         if (item == "COLON"):
             result += ":"
         elif (item == "ESC"):
@@ -39,6 +46,7 @@ def lesson_to_string(lesson):
             result += item[1]
         else:
             result += item.lower()
+        """
     return result
 
 
