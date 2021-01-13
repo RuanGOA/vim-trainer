@@ -9,7 +9,7 @@ NAMES = [
     "LEVEL 8 - INTERMEDIATE",
     "LEVEL 8 - EXPERT",
     "LEVEL 9 - EXPERT",
-    "LEVEL 10 - ARE U A GENIUS?"
+    "LEVEL 10 - ARE YOU A GENIUS?"
 ]
 
 LESSONS = [
