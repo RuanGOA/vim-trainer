@@ -68,7 +68,7 @@ def clear():
 def verify_event_key_down(answers):
     res = False
     for ans in answers:
-        if ('CTRL_' in ans[0] or ans[0] == 'ESC'):
+        if ('CTRL_' in ans or ans == 'ESC'):
             res = True
     return res
 
@@ -76,7 +76,7 @@ def verify_event_key_down(answers):
 def verify_key_down(key, right_answers):
     result = False
     for answer in right_answers:
-        if key == answer[0]:
+        if key == answer:
             result = True
     return result
 
