@@ -11,12 +11,17 @@ from utils import (
     verify_key_down,
     create_title
 )
-from lessons import NAMES, LESSONS
+from lessons import LESSONS
 from level import level
 
 
-MAIN_MENU_TITLE = "                  VIM TRAINER                 \n\n" + "What's your Vim skill level right now?\n"
-MAIN_MENU_ITEMS = ["I'm a beginner", "I'm experienced, but I want to learn more", "I'm tired, I'm going out"]
+MAIN_MENU_TITLE = "                  VIM TRAINER                 \n\n" \
+    + "What's your Vim skill level right now?\n"
+MAIN_MENU_ITEMS = [
+    "I'm a beginner",
+    "I'm experienced, but I want to learn more",
+    "I'm tired, I'm going out"
+]
 MAIN_MENU_CURSOR = "> "
 MAIN_MENU_CURSOR_STYLE = ("fg_red", "bold")
 MAIN_MENU_STYLE = ("bg_cyan", "fg_gray")
@@ -24,21 +29,26 @@ MAIN_MENU_EXIT = False
 
 
 def start_beginner():
-    for i in range(0, 10):
-        level_i = level(NAMES[i], LESSONS[i])
+    for i, lessons_level in enumerate(LESSONS):
+        level_i = level(i, lessons_level)
         start_level(level_i)
 
 
-def start_level(level):
-    up_next(level)
+def start_level(level_i):
+    up_next(level_i)
     input("-> PRESS ENTER TO START THIS LEVEL <-")
     clear()
 
-    for i in range(4):
-        lesson = level.get_lesson()
+    #ordinal lessons
+    for lesson in level_i.lessons.items():
         show_lesson(lesson)
 
-    print(f"\n-> YOU COMPLETED {level.name} <-\n")
+    #random lessons
+    for i in range(20):
+        lesson = level_i.get_lesson()
+        show_lesson(lesson)
+
+    print(f"\n-> YOU COMPLETED {level_i.name} <-\n")
 
 
 def show_lesson(lesson):
@@ -49,14 +59,14 @@ def show_lesson(lesson):
         clear()
         print(create_title(lesson_title))
 
-        if(not first_lesson):
+        if not first_lesson:
             print(create_title("WRONG", "\u001b[41m"))
             print(create_title("TRY AGAIN", "\u001b[41m"))
         else:
             first_lesson = False
             print("\n")
 
-        if(verify_event_key_down(lesson[1])):
+        if verify_event_key_down(lesson[1]):
             answer = getkey()
             answer = str(keys.name(answer))
             flag = verify_key_down(answer, lesson[1])
@@ -71,7 +81,7 @@ def show_lesson(lesson):
     clear()
 
 
-if(__name__ == '__main__'):
+if __name__ == '__main__':
     main_menu = TerminalMenu(menu_entries=MAIN_MENU_ITEMS,
                          title=MAIN_MENU_TITLE,
                          menu_cursor=MAIN_MENU_CURSOR,
