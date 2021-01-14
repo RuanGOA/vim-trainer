@@ -12,6 +12,12 @@ For execution it is necessary to install some dependencies that are in the [requ
 
 > sh setup.sh
 
+## Execution
+
+After installing the dependencies, running Vim Trainer is very simple, just run the main.py file with python 3 and hands on.
+
+> python3 main.py
+
 ## More
 
 If there are any ideas you want to share, just chat. Enjoy
