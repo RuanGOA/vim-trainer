@@ -1,8 +1,8 @@
 from random import randint
 
 class level:
-    def __init__(self, name, lessons):
-        self.name = name
+    def __init__(self, id_level, lessons):
+        self.name = "LEVEL " + str(id_level)
         self.lessons = lessons
 
     def get_lesson(self):
