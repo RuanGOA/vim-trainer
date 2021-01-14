@@ -1,17 +1,3 @@
-NAMES = [
-    "LEVEL 0 - INTRO",
-    "LEVEL 1 - INTRO",
-    "LEVEL 2 - BEGINNER",
-    "LEVEL 3 - BEGINNER",
-    "LEVEL 4 - NORMAL",
-    "LEVEL 5 - NORMAL",
-    "LEVEL 7 - INTERMEDIATE",
-    "LEVEL 8 - INTERMEDIATE",
-    "LEVEL 8 - EXPERT",
-    "LEVEL 9 - EXPERT",
-    "LEVEL 10 - ARE YOU A GENIUS?"
-]
-
 LESSONS = [
     {
         "Move cursor left": ["h"],
@@ -25,7 +11,7 @@ LESSONS = [
         "Delete character at cursor": ["x"],
         "Insert at cursor": ["i"],
         "Insert at beginning of line": ["I"],
-        "Append at cursor": ["a"],
+        "Append after cursor": ["a"],
         "Append at end of line": ["A"],
         "Exit insert mode": ["ESC"]
     },
@@ -73,7 +59,24 @@ LESSONS = [
         "Open visual mode": ["v"],
         "Visual selected world": ["vw"],
         "Visual select word, then delete word": ["vwd", "vwx"],
-        "Save current file as \"play.rb\"": [":w play.rb"],
-        "Read in file \"hat.rb\"": [":r hat.rb"]
+        "Save current file as \"socket.js\"": [":w socket.js"],
+        "Read in file \"play.py\"": [":r play.py"]
+    },
+    {
+        "Open new line below": ["o"],
+        "Open new line above": ["O"],
+        "Go to end of word": ["e"],
+        "Go to end of next word": ["2e"],
+        "Enter replace mode": ["R"],
+        "Yank word": ["yw"],
+        "Visual select word, then yank": ["vwy"],
+        "Yank to end of current line": ["y$"],
+        "Change search settings to ignore case": ["set ignorecase", "set ic"],
+        "Change search settings to use case": ["set noignorecase", "set noic"]
+    },
+    {
+        "Open file \"~/.vimrc\"": [":e ~/.vimrc"],
+        "Get help for \"d\" command": [":help d"],
+        "Get help for \"y\" command": [":help y"]
     }
 ]
