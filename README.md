@@ -1,8 +1,10 @@
-# Vim Trainer :chart_with_upwards_trend:
+# Vim Trainer :keyboard:
 
 They say that _repetition leads to dominance_ and, for that purpose, this application allows you to learn and exercise commands from different levels of our dear friend Vim (Vi, or whatever you use).
 
-There are 10 levels of commands, with 40 lessons chosen at random in each one.
+In beginner mode, there are 7 levels of commands.
+
+The expert mode has not yet been implemented, but the beginner mode is good for practicing commands, even if you already know.
 
 ## Installing Dependencies
 
@@ -10,7 +12,12 @@ For execution it is necessary to install some dependencies that are in the [requ
 
 > sh setup.sh
 
+## Execution
+
+After installing the dependencies, running Vim Trainer is very simple, just run the main.py file with python 3 and hands on.
+
+> python3 main.py
+
 ## More
 
-If you have any ideas and want to share, feel free. :smile:
-
+If there are any ideas you want to share, just chat. Enjoy
