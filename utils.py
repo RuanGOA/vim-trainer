@@ -24,12 +24,22 @@ def lesson_to_string(lesson):
     return result
 
 
-def verify(user_answer, right_answers):
-    for answer in right_answers:
-        stri = lesson_to_string(answer)
-        if user_answer == stri:
-            return True
-    return False
+def print_tip(right_answers):
+    right = right_answers[0]
+    for r in right_answers[1:]:
+        right += f"OR {r}"
+    print(create_title(right, "\u001b[43m"))
+
+
+def verify_answer_text(user_answer, right_answers):
+    if user_answer == '?':
+        return None
+    else:
+        for answer in right_answers:
+            stri = lesson_to_string(answer)
+            if user_answer == stri:
+                return True
+        return False
 
 
 def clear():
@@ -48,11 +58,14 @@ def verify_event_key_down(answers):
 
 
 def verify_key_down(key, right_answers):
-    result = False
-    for answer in right_answers:
-        if key == answer:
-            result = True
-    return result
+    if key == "QUESTION":
+        return None
+    else:
+        result = False
+        for answer in right_answers:
+            if key == answer:
+                result = True
+        return result
 
 
 def create_title(text, color="\u001b[46m", size=45):

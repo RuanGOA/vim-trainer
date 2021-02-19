@@ -5,11 +5,12 @@ from simple_term_menu import TerminalMenu
 
 from utils import (
     up_next,
-    verify,
+    verify_answer_text,
     clear,
     verify_event_key_down,
     verify_key_down,
-    create_title
+    create_title,
+    print_tip
 )
 from lessons import LESSONS
 from level import level
@@ -59,7 +60,12 @@ def show_lesson(lesson):
         clear()
         print(create_title(lesson_title))
 
-        if not first_lesson:
+        if flag == None:
+            print_tip(lesson[1])
+        else:
+            print(create_title("\"?\" FOR TIP", "\u001b[43m"))
+
+        if not first_lesson and flag is not None:
             print(create_title("WRONG", "\u001b[41m"))
             print(create_title("TRY AGAIN", "\u001b[41m"))
         else:
@@ -72,7 +78,7 @@ def show_lesson(lesson):
             flag = verify_key_down(answer, lesson[1])
         else:
             answer = input("\u001b[31m" + "> " + "\u001b[0m")
-            flag = verify(answer, lesson[1])
+            flag = verify_answer_text(answer, lesson[1])
 
     clear()
     print(create_title(lesson_title))
